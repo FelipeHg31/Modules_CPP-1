@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/03/25 00:08:22 by juan-her          #+#    #+#              #
-#    Updated: 2026/03/25 17:27:49 by juan-her         ###   ########.fr        #
+#    Created: 2026/04/01 03:53:31 by juan-her          #+#    #+#              #
+#    Updated: 2026/04/01 04:17:29 by juan-her         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CPP = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = MyAwsomePhoneBook
-SRC = Contact.cpp PhoneBook.cpp main.cpp
+NAME = The_Job_Of_Your_Dreams
+SRC = Account.cpp tests.cpp
 OBJ_DIR = ./obj
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 RM = rm -rf
