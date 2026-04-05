@@ -6,7 +6,7 @@
 #    By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/28 17:57:50 by juan-her          #+#    #+#              #
-#    Updated: 2026/03/28 18:38:02 by juan-her         ###   ########.fr        #
+#    Updated: 2026/04/04 21:30:12 by juan-her         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,4 +37,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONNY: all clean fclean re
+.PHONY: all clean fclean re

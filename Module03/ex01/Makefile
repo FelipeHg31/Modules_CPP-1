@@ -5,32 +5,33 @@
 #                                                     +:+ +:+         +:+      #
 #    By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/03/28 17:57:50 by juan-her          #+#    #+#              #
-#    Updated: 2026/04/04 21:30:06 by juan-her         ###   ########.fr        #
+#    Created: 2026/04/04 21:17:27 by juan-her          #+#    #+#              #
+#    Updated: 2026/04/05 16:10:16 by juan-her         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CPP = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = fixed
-SRC = Fixed.cpp main.cpp
-OBJ_DIR = ./obj
-OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
+CFLAGS = -Wall -Wextra -Werror
+NAME = Serena,_my_love!
+SRC = ClapTrap.cpp ScavTrap.cpp main.cpp
+SRC_OBJ = ./obj
+OBJ = $(SRC:%.cpp=$(SRC_OBJ)/%.o)
 RM = rm -rf
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(CPP) $(CFLAGS) $(OBJ) -o $(NAME)
+	@echo "Created"
 
-$(OBJ_DIR):
-	@mkdir -p $(OBJ_DIR)
+$(SRC_OBJ):
+	@mkdir -p $(SRC_OBJ)
 
-$(OBJ_DIR)/%.o:%.cpp | $(OBJ_DIR)
+$(SRC_OBJ)/%.o:%.cpp | $(SRC_OBJ)
 	@$(CPP) $(CFLAGS) -c $< -o $@
 
 clean:
-	@$(RM) $(OBJ_DIR)
+	@$(RM) $(SRC_OBJ)
 
 fclean: clean
 	@$(RM) $(NAME)
