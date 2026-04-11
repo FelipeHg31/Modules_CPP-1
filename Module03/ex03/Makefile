@@ -6,12 +6,12 @@
 #    By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/04 21:17:27 by juan-her          #+#    #+#              #
-#    Updated: 2026/04/05 20:02:21 by juan-her         ###   ########.fr        #
+#    Updated: 2026/04/11 03:00:36 by juan-her         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CPP = c++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = Now_its_weird!
 SRC = ClapTrap.cpp FragTrap.cpp ScavTrap.cpp DiamondTrap.cpp main.cpp
 SRC_OBJ = ./obj

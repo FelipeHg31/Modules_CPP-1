@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/04/04 21:17:27 by juan-her          #+#    #+#              #
-#    Updated: 2026/04/11 03:00:55 by juan-her         ###   ########.fr        #
+#    Created: 2026/04/11 02:54:32 by juan-her          #+#    #+#              #
+#    Updated: 2026/04/11 03:39:34 by juan-her         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CPP = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = Aaaaand....OPEN!
-SRC = ClapTrap.cpp main.cpp
+NAME = Interface_recap
+SRC = AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp
 SRC_OBJ = ./obj
 OBJ = $(SRC:%.cpp=$(SRC_OBJ)/%.o)
 RM = rm -rf

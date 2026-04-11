@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/04/04 21:17:27 by juan-her          #+#    #+#              #
-#    Updated: 2026/04/11 03:00:55 by juan-her         ###   ########.fr        #
+#    Created: 2026/04/08 21:10:48 by juan-her          #+#    #+#              #
+#    Updated: 2026/04/11 03:00:23 by juan-her         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CPP = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = Aaaaand....OPEN!
-SRC = ClapTrap.cpp main.cpp
+NAME = I_dont_want_to_set_the_world_on_fire
+SRC = Animal.cpp Cat.cpp Dog.cpp Brain.cpp main.cpp
 SRC_OBJ = ./obj
 OBJ = $(SRC:%.cpp=$(SRC_OBJ)/%.o)
 RM = rm -rf
