@@ -33,12 +33,14 @@ int main(int ac, char **ag)
         {
             if (std::isalpha(static_cast<unsigned char> (str[j])) && std::islower(static_cast<unsigned char> (str[j])))
             {
-                c = static_cast<unsigned char>(std::toupper(static_cast<unsigned char> (str[j])));
+                c = (std::toupper(static_cast<unsigned char> (str[j])));
                 std::cout << c;
             }
             else
                 std::cout << str[j];
         }
+        if (i != ac - 1)
+            std::cout << std::endl;
     }
     std::cout << "\n";
     return (0);

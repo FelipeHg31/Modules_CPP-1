@@ -28,6 +28,7 @@ class PhoneNumber
         void set_info_contact();
         void ft_show_cont(int id);
         void ft_show_agenda();
+        static bool ft_is_number(std::string str);
 };
 
 #endif

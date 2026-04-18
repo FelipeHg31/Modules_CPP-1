@@ -45,23 +45,49 @@ std::string ft_set_data(std::string camp)
 {
     std::string str;
 
-    while(str.empty())
+    while (true)
     {
         std::cout << "Enter " << camp << ": " << std::endl;
-        std::getline(std::cin, str);
+
+        if (!std::getline(std::cin, str))
+        {
+            std::cin.clear();
+            return "";
+        }
+        if (!str.empty())
+            return str;
+        std::cout << "Field cannot be empty." << std::endl;
     }
-    return (str);
 }
 
 void PhoneNumber::set_info_contact()
 {
     Contact cont;
 
-    cont.set_first(ft_set_data("First Name"));
-    cont.set_sec(ft_set_data("Second Name"));
-    cont.set_nick(ft_set_data("Nickname"));
-    cont.set_phone(ft_set_data("Phone Number"));
-    cont.set_dark(ft_set_data("Dark Secret"));
+    std::string input;
+
+    input = ft_set_data("First Name");
+    if (input.empty()) 
+        return ;
+    cont.set_first(input);
+    input = ft_set_data("Second Name");
+    if (input.empty()) 
+        return;
+    cont.set_sec(input);
+    do
+    {
+        input = ft_set_data("Phone Number");
+        if (input.empty()) 
+            return ;
+        cont.set_phone(input);
+    }
+    while (PhoneNumber::ft_is_number(cont.get_phone()));
+    input = ft_set_data("Nickname");
+    if (input.empty()) return;
+    cont.set_nick(input);
+    input = ft_set_data("Dark Secret");
+    if (input.empty()) return;
+    cont.set_dark(input);
     add_contact(cont);
 }
 
@@ -103,6 +129,24 @@ void PhoneNumber::ft_show_agenda()
     for (int i = 0; i < this->num_contacts; i++)
         ft_show_cont(i);
     std::cout << "Enter ID: " << std::endl;
+}
+
+bool PhoneNumber::ft_is_number(std::string str)
+{
+    for (size_t i=0; i < str.size(); i++)
+    {
+        if (!(str[i] >= '0' && str[i] <= '9'))
+        {
+            std::cout << "The phone number must contain only numbers." << std::endl;
+            return (true);
+        }
+    }
+    if (str.size() != 9)
+    {
+        std::cout << "The length of the phone number is incorrect." << std::endl;
+        return (true);
+    }
+    return (false);
 }
 
 

@@ -25,10 +25,11 @@ $(NAME): $(OBJ)
 	@echo "Done"
 
 clean:
-	@$(RM) $(NAME)
+	@$(RM) $(OBJ)
 	@echo "delete"
 
 fclean: clean
+	@$(RM) $(NAME)
 	@echo "delete"
 
 re: fclean all

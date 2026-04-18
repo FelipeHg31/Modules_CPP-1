@@ -19,7 +19,7 @@ OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 RM = rm -rf
 
 all: $(NAME)
-	@echo "Your Phone Book is ready"
+	@echo "The Job Of Your Dreams is ready"
 
 $(NAME): $(OBJ)
 	@$(CPP) $(CFLAGS) $(OBJ) -o $(NAME)

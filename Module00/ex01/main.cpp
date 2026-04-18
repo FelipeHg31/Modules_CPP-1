@@ -21,26 +21,26 @@ int main()
     PhoneNumber phone = PhoneNumber();
     int id;
 
-    id = 0;
-    std::cout<< "Welcome to your Phone Book!" << std::endl;
-    std::cout<< "Options: \n1. ADD.\n2. SEARCH.\n3. EXIT." << std::endl;
-    std::getline(std::cin, cmd);
-    while (cmd.compare("EXIT") != 0 || cmd.empty())
+    do
     {
+        id = 0;
+        std::cout<< "\n\tyour Phone Book" << std::endl;
+        std::cout<< "Options: \n1. ADD.\n2. SEARCH.\n3. EXIT." << std::endl;
+        if (!std::getline(std::cin, cmd))
+            break ;
         if (cmd.compare("ADD") == 0)
             phone.set_info_contact();
         else if (cmd.compare("SEARCH") == 0)
         {
             phone.ft_show_agenda();
-            std::getline(std::cin, cmd);
+            if (!std::getline(std::cin, cmd))
+                break ;
             id = atoi(cmd.c_str());
             phone.get_contact(id);
         }
         else if (cmd.compare("EXIT") != 0)
             std::cout<< "\nIncorrect option" << std::endl;
-        std::cout<< "\n\tyour Phone Book" << std::endl;
-        std::cout<< "Options: \n1. ADD.\n2. SEARCH.\n3. EXIT." << std::endl;
-        std::getline(std::cin, cmd);
     }
+    while (cmd.compare("EXIT") != 0);
     return (0);
 }
