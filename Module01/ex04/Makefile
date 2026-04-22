@@ -19,7 +19,7 @@ OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 RM = rm -rf
 
 all: $(NAME)
-	@echo "Program ready"
+	@echo "Sed is for losers ready"
 
 $(NAME): $(OBJ)
 	@$(CPP) $(CFLAGS) $(OBJ) -o $(NAME)

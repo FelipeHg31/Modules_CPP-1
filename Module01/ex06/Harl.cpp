@@ -18,22 +18,22 @@ Harl::Harl(){}
 
 void Harl::debug()
 {
-    std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
+    std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!\n" << std::endl;
 }
 
 void Harl::info()
 {
-    std::cout << "I cannot believe adding extra bacon costs more money. You didn’t putenough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
+    std::cout << "I cannot believe adding extra bacon costs more money. You didn’t putenough bacon in my burger! If you did, I wouldn’t be asking for more!\n" << std::endl;
 }
 
 void Harl::warning()
 {
-    std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years, whereas you started working here just last month." << std::endl;
+    std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years, whereas you started working here just last month.\n" << std::endl;
 }
 
 void Harl::error()
 {
-    std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+    std::cout << "This is unacceptable! I want to speak to the manager now.\n" << std::endl;
 }
 
 static int ft_check(std::string level)
@@ -54,25 +54,35 @@ void Harl::filter(std::string level)
     switch (c)
     {
     case 'D':
+        std::cout << "[ DEBUG ]" << std::endl;
         debug();
+        std::cout << "[ INFO ]" << std::endl;
         info();
+        std::cout << "[ WARNING ]" << std::endl;
         warning();
+        std::cout << "[ ERROR ]" << std::endl;
         error();
         break;
     case 'I':
+        std::cout << "[ INFO ]" << std::endl;
         info();
+        std::cout << "[ WARNING ]" << std::endl;
         warning();
+        std::cout << "[ ERROR ]" << std::endl;
         error();
         break;
     case 'W':
+        std::cout << "[ WARNING ]" << std::endl;
         warning();
+        std::cout << "[ ERROR ]" << std::endl;
         error();
         break;
     case 'E':
+        std::cout << "[ ERROR ]" << std::endl;
         error();
         break;
     default:
-        std::cout << "Probably complaining about insignificant problems..." << std::endl;
+        std::cout << "[ Probably complaining about insignificant problems... ]" << std::endl;
         break;
     }
 }

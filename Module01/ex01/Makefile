@@ -19,7 +19,7 @@ OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
 RM = rm -rf
 
 all: $(NAME)
-	@echo "Program ready"
+	@echo "Moar brainz ready"
 
 $(NAME): $(OBJ)
 	@$(CPP) $(CFLAGS) $(OBJ) -o $(NAME)

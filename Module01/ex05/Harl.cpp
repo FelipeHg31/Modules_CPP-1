@@ -55,4 +55,5 @@ void Harl::complain(std::string level)
             return ;
         }
     }
+    std::cout << "Wrong option!" << std::endl;
 }

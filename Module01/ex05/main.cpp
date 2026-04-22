@@ -20,9 +20,10 @@ int main()
 
     while (1)
     {
-        std::getline(std::cin, line);
+        if (!std::getline(std::cin, line))
+            break ;
         if (line == "EXIT")
-            break;
+            break ;
         harl.complain(line);
     }
 }

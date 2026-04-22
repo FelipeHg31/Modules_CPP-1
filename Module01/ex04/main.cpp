@@ -35,7 +35,14 @@ int main(int ac, char **ag)
     std::ifstream in(str.c_str());
     std::ofstream out((str + ".replace").c_str());
     if (!in.is_open() || !out.is_open())
+    {
+        std::cout << "Error with files!" << std::endl;
+        if (in)
+            in.close();
+        if(out)
+            out.close();
         return (1);
+    }
     while(std::getline(in, line))
     {
         ft_replace(&line, ag[2], ag[3]);

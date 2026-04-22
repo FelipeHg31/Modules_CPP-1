@@ -12,14 +12,14 @@
 
 CPP = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = Unnecessary_violence
+NAME = HI_THIS_IS_BRAIN
 SRC = main.cpp
 OBJ_DIR = ./obj
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 RM = rm -rf
 
 all: $(NAME)
-	@echo "Program ready"
+	@echo "HI THIS IS BRAIN is ready"
 
 $(NAME): $(OBJ)
 	@$(CPP) $(CFLAGS) $(OBJ) -o $(NAME)
