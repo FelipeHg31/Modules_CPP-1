@@ -22,6 +22,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(CPP) $(CFLAGS) $(OBJ) -o $(NAME)
+	@echo "Fixed created"
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
@@ -31,9 +32,11 @@ $(OBJ_DIR)/%.o:%.cpp | $(OBJ_DIR)
 
 clean:
 	@$(RM) $(OBJ_DIR)
+	@echo "Fixed objects deleted"
 
 fclean: clean
 	@$(RM) $(NAME)
+	@echo "Fixed deleted"
 
 re: fclean all
 
