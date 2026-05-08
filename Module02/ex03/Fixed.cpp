@@ -3,28 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 17:57:38 by juan-her          #+#    #+#             */
-/*   Updated: 2026/04/02 03:26:12 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/08 23:39:40 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <cmath>
 
-Fixed::Fixed(): value(0){}
+Fixed::Fixed(): _value(0){}
 
-Fixed::Fixed(const Fixed& other): value(other.value) {}
+Fixed::Fixed(const Fixed& other): _value(other._value) {}
 
-Fixed::Fixed(int const num): value (num * (1 << this->fractionalBit)) {}
+Fixed::Fixed(int const num): _value (num * (1 << _fractionalBit)) {}
 
-Fixed::Fixed(float const num): value(roundf(num * (1 << this->fractionalBit))){}
+Fixed::Fixed(float const num): _value(roundf(num * (1 << _fractionalBit))){}
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
     if (this != &other)
-        this->value = other.value;
+        _value = other._value;
     return (*this);
 }
 
@@ -32,106 +32,106 @@ Fixed::~Fixed(){}
 
 bool Fixed::operator>(const Fixed& other) const
 {
-    return (this->value > other.value);
+    return (_value > other._value);
 }
 
 bool Fixed::operator<(const Fixed& other) const
 {
-    return (this->value < other.value);
+    return (_value < other._value);
 }
 
 bool Fixed::operator>=(const Fixed& other) const
 {
-    return (this->value >= other.value);
+    return (_value >= other._value);
 }
 
 bool Fixed::operator<=(const Fixed& other) const
 {
-    return (this->value <= other.value);
+    return (_value <= other._value);
 }
 
 bool Fixed::operator==(const Fixed& other) const
 {
-    return (this->value == other.value);
+    return (_value == other._value);
 }
 
 bool Fixed::operator!=(const Fixed& other) const
 {
-    return (this->value != other.value);
+    return (_value != other._value);
 }
 
 Fixed& Fixed::operator--()
 {
-    this->value -= 1;
+    _value -= 1;
     return (*this);
 }
 
 Fixed Fixed::operator--(int)
 {
     Fixed temp = *this;
-    this->value -= 1;
+    _value -= 1;
     return (temp); 
 }
 
 Fixed& Fixed::operator++()
 {
-    this->value += 1;
+    _value += 1;
     return (*this);
 }
 
 Fixed Fixed::operator++(int)
 {
     Fixed temp = *this;
-    this->value += 1;
+    _value += 1;
     return (temp); 
 }
 
 Fixed Fixed::operator+(const Fixed &other) const
 {
     Fixed result;
-    result.setRawBits((this->value + other.value) >> this->fractionalBit);
+    result.setRawBits((_value + other._value));
     return (result);
 }
 
 Fixed Fixed::operator-(const Fixed &other) const
 {
     Fixed result;
-    result.setRawBits((this->value - other.value) >> this->fractionalBit);
+    result.setRawBits((_value - other._value));
     return (result);
 }
 
 Fixed Fixed::operator*(const Fixed &other) const
 {
     Fixed result;
-    result.setRawBits((this->value * other.value) >> this->fractionalBit);
+    result.setRawBits((_value * other._value));
     return (result);
 }
 
 Fixed Fixed::operator/(const Fixed &other) const
 {
     Fixed result;
-    result.setRawBits((this->value / other.value) >> this->fractionalBit);
+    result.setRawBits((_value / other._value));
     return (result);
 }
 
 int Fixed::getRawBits(void) const
 {
-    return (this->value);
+    return (_value);
 }
 
 void Fixed::setRawBits(int const raw)
 {
-    this->value = raw;
+    _value = raw;
 }
 
 float Fixed::toFloat() const
 {
-    return ((float)this->value / (1 << this->fractionalBit));
+    return ((float)_value / (1 << _fractionalBit));
 }
 
 int Fixed::toInt() const
 {
-    return (this->value / (1 << this->fractionalBit));
+    return (_value / (1 << _fractionalBit));
 }
 
 std::ostream& operator<<(std::ostream& out, const Fixed& obj)

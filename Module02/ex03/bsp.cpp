@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 20:12:12 by juan-her          #+#    #+#             */
-/*   Updated: 2026/04/02 03:52:50 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/08 23:42:08 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#include "bsp.hpp"
 
 static Fixed area(Point const a, Point const b, Point const c)
 {
-    return (b.getX() - a.getX()) * (c.getY() - a.getY()) -
-           (b.getY() - a.getY()) * (c.getX() - a.getX());
+    return ( (a.getX() - c.getX()) * (b.getY() - c.getY())) - ((b.getX() - c.getX()) * (a.getY() - c.getY()) );
 }
 
 bool bsp(Point const a, Point const b, Point const c, Point const point)
@@ -23,9 +22,12 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
     Fixed a1 = area(point, a, b);
     Fixed a2 = area(point, b, c);
     Fixed a3 = area(point, c, a);
-
-    bool has_neg = (a1 < 0) || (a2 < 0) || (a3 < 0);
-    bool has_pos = (a1 > 0) || (a2 > 0) || (a3 > 0);
-
-    return !(has_neg && has_pos);
+    
+    if (a1 == Fixed(0) || a2 == Fixed(0) || a3 == Fixed(0))
+        return (false);
+    if ((a1 < 0) && (a2 < 0) && (a3 < 0))
+        return true;
+    if ((a1 > 0) && (a2 > 0) && (a3 > 0))
+        return true;
+    return false;
 }
