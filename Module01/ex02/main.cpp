@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 20:57:03 by juan-her          #+#    #+#             */
-/*   Updated: 2026/03/26 22:39:45 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/08 13:34:38 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
     std::string& stringREF = str;
 
     std::cout << "The memory address of the string variable " << &str << std::endl;
-    std::cout << "The memory address held by stringPTR " << &stringPTR << std::endl;
+    std::cout << "The memory address held by stringPTR " << stringPTR << std::endl;
     std::cout << "The memory address held by stringREF " << &stringREF << std::endl;
     std::cout << std::endl;
     std::cout << "The value of the string " << str << std::endl;

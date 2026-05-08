@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/27 03:17:46 by juan-her          #+#    #+#             */
-/*   Updated: 2026/03/28 16:25:56 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/08 13:37:35 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,33 +56,16 @@ void Harl::filter(std::string level)
     case 'D':
         std::cout << "[ DEBUG ]" << std::endl;
         debug();
-        std::cout << "[ INFO ]" << std::endl;
-        info();
-        std::cout << "[ WARNING ]" << std::endl;
-        warning();
-        std::cout << "[ ERROR ]" << std::endl;
-        error();
-        break;
     case 'I':
         std::cout << "[ INFO ]" << std::endl;
         info();
-        std::cout << "[ WARNING ]" << std::endl;
-        warning();
-        std::cout << "[ ERROR ]" << std::endl;
-        error();
-        break;
     case 'W':
         std::cout << "[ WARNING ]" << std::endl;
         warning();
-        std::cout << "[ ERROR ]" << std::endl;
-        error();
-        break;
     case 'E':
         std::cout << "[ ERROR ]" << std::endl;
         error();
-        break;
     default:
         std::cout << "[ Probably complaining about insignificant problems... ]" << std::endl;
-        break;
     }
 }
