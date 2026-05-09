@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/05 14:57:18 by juan-her          #+#    #+#             */
-/*   Updated: 2026/04/05 16:05:47 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/09 16:17:49 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,28 @@
 
 ScavTrap::ScavTrap(): ClapTrap("new")
 {
-    std::cout << "New ScavTrap " << this->name << std::endl;
-    this->h_points = 100;
-    this->e_points = 50;
-    this->a_damage = 20;
+    std::cout << "New ScavTrap " << _name << std::endl;
+    _h_points = 100;
+    _e_points = 50;
+    _a_damage = 20;
 }
 
 ScavTrap::ScavTrap(const std::string name): ClapTrap(name)
 {
     std::cout << "ScapTrap " << name << " was created!" << std::endl;
-    this->h_points = 100;
-    this->e_points = 50;
-    this->a_damage = 20;
+    _h_points = 100;
+    _e_points = 50;
+    _a_damage = 20;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other): ClapTrap(other)
 {
-    std::cout << "New ScavTrap copy " << this->name << std::endl;
+    std::cout << "New ScavTrap copy " << _name << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 {
-    std::cout << "New ScavTrap asig " << other.name << std::endl;
+    std::cout << "New ScavTrap asig " << other._name << std::endl;
     if (this != &other)
     {
         ClapTrap::operator=(other);
@@ -46,24 +46,24 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "The ScavTrap " << this->name << " was detroyed!" << std::endl;
+    std::cout << "The ScavTrap " << _name << " was detroyed!" << std::endl;
 }
 
 void ScavTrap::guardGate()
 {
-    std::cout << "ScavTrap " << this->name << " is now in Gate keeper mode!" << std::endl;
+    std::cout << "ScavTrap " << _name << " is now in Gate keeper mode!" << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target)
 {
-    if (this->e_points >= 1 && this->h_points >= 1)
+    if (_e_points >= 1 && _h_points >= 1)
     {
-        this->e_points--;
-        std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing  " << this->a_damage <<  " points of damage!" << std::endl;
+        _e_points--;
+        std::cout << "ScavTrap " << _name << " attacks " << target << ", causing  " << _a_damage <<  " points of damage!" << std::endl;
     }
     else
     {
-        if (this->e_points < 1)
+        if (_e_points < 1)
             std::cout << "No energy points" << std::endl;
         else
             std::cout << "No hit points" << std::endl;
