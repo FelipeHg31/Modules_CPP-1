@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/05 18:43:56 by juan-her          #+#    #+#             */
-/*   Updated: 2026/05/09 16:38:35 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/09 21:38:01 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,13 @@ void DiamondTrap::attack(const std::string& target)
 
 void DiamondTrap::whoAmI()
 {
-    std::cout << "Diamond _name: " << _name << " | ClapTrap _name: " << ClapTrap::_name << std::endl;
+    if (_e_points >= 1 && _h_points >= 1)
+        std::cout << "Diamond _name: " << _name << " | ClapTrap _name: " << ClapTrap::_name << std::endl;
+    else
+    {
+        if (_e_points < 1)
+            std::cout << "No energy points" << std::endl;
+        else
+            std::cout << "No hit points" << std::endl;
+    }
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/05 14:57:18 by juan-her          #+#    #+#             */
-/*   Updated: 2026/05/09 16:40:11 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/09 21:36:20 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,15 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::guardGate()
 {
-    std::cout << "ScavTrap " << _name << " is now in Gate keeper mode!" << std::endl;
+    if (_e_points >= 1 && _h_points >= 1)
+        std::cout << "ScavTrap " << _name << " is now in Gate keeper mode!" << std::endl;
+    else
+    {
+        if (_e_points < 1)
+            std::cout << "No energy points" << std::endl;
+        else
+            std::cout << "No hit points" << std::endl;
+    }
 }
 
 void ScavTrap::attack(const std::string& target)

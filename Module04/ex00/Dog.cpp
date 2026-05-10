@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/08 21:10:02 by juan-her          #+#    #+#             */
-/*   Updated: 2026/04/09 00:27:29 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/09 21:47:06 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 Dog::Dog(): Animal()
 {
     std::cout << "Dog was created!!" << std::endl;
-    this->type = "Dog";
+    _type = "Dog";
 }
 
-Dog::Dog(const std::string type): Animal(type)
+Dog::Dog(const std::string _type): Animal(_type)
 {
     std::cout << "Dog was created by args!!" << std::endl;
 }
@@ -33,7 +33,7 @@ Dog& Dog::operator=(const Dog& other)
 {
     std::cout << "Dog asig was created!!" << std::endl;
     if(this != &other)
-        this->type = other.type;
+        _type = other._type;
     return (*this);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 21:12:54 by juan-her          #+#    #+#             */
-/*   Updated: 2026/04/05 20:08:32 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/09 21:23:31 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ int main(int ac, char **ag)
     f.takeDamage(8);
     f.beRepaired(5);
     f.takeDamage(15);
+    f.attack("Segundo");
 }

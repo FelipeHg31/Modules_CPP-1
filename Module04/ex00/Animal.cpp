@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/08 21:09:36 by juan-her          #+#    #+#             */
-/*   Updated: 2026/04/09 01:01:08 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/09 21:45:17 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,21 @@ Animal::Animal()
 {
     std::cout << "Animal was created!!" << std::endl;
 }
-Animal::Animal(const std::string type): type(type)
+Animal::Animal(const std::string _type): _type(_type)
 {
     std::cout << "Animal was created by args!!" << std::endl;
 }
 
-Animal::Animal(const Animal& other)
+Animal::Animal(const Animal& other): _type(other._type)
 {
     std::cout << "Animal copy was created!!" << std::endl;
-    this->type = other.type;
 }
 
 Animal& Animal::operator=(const Animal& other)
 {
     std::cout << "Animal asig was created!!" << std::endl;
     if (this != &other)
-        this->type = other.type;
+        _type = other._type;
     return (*this);
 }
 
@@ -49,7 +48,7 @@ void Animal::makeSound() const
 
 const std::string Animal::getType() const
 {
-    return(this->type);
+    return(_type);
 }
 
 

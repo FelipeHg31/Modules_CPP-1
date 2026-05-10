@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 21:40:43 by juan-her          #+#    #+#             */
-/*   Updated: 2026/05/09 16:05:55 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/09 21:21:53 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
     }
     return (*this);
 }
-
 
 ClapTrap::~ClapTrap()
 {

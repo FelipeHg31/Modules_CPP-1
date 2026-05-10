@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/08 21:09:42 by juan-her          #+#    #+#             */
-/*   Updated: 2026/04/09 00:27:34 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/09 21:45:53 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 Cat::Cat(): Animal()
 {
     std::cout << "Cat was created!!" << std::endl;
-    this->type = "Cat";
+    _type = "Cat";
 }
 
-Cat::Cat(const std::string type): Animal(type)
+Cat::Cat(const std::string _type): Animal(_type)
 {
     std::cout << "Cat was created by args!!" << std::endl;
 }
@@ -33,7 +33,7 @@ Cat& Cat::operator=(const Cat& other)
 {
     std::cout << "Cat asig was created!!" << std::endl;
     if(this != &other)
-        this->type = other.type;
+        _type = other._type;
     return (*this);
 }
 

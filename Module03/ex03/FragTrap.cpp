@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/05 16:39:36 by juan-her          #+#    #+#             */
-/*   Updated: 2026/05/09 16:39:08 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/09 21:37:19 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,14 @@ FragTrap::~FragTrap()
 
 void FragTrap::highFivesGuys()
 {
-    std::cout << "FragTrap " << this->_name << " wants a high five!" << std::endl;
+    if (_e_points >= 1 && _h_points >= 1)
+        std::cout << "FragTrap " << _name << " wants a high five!" << std::endl;
+    else
+    {
+        if (_e_points < 1)
+            std::cout << "No energy points" << std::endl;
+        else
+            std::cout << "No hit points" << std::endl;
+    }
 }
 
