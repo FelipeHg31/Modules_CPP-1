@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+         #
+#    By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/08 21:10:48 by juan-her          #+#    #+#              #
-#    Updated: 2026/04/11 03:00:10 by juan-her         ###   ########.fr        #
+#    Updated: 2026/05/10 16:28:51 by juan-her         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CPP = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = AbstractClass
 SRC = AAnimal.cpp Cat.cpp Dog.cpp Brain.cpp main.cpp
 SRC_OBJ = ./obj
@@ -21,14 +21,14 @@ RM = rm -rf
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CPP) $(CFLAGS) $(OBJ) -o $(NAME)
+	@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 	@echo "Created"
 
 $(SRC_OBJ):
 	@mkdir -p $(SRC_OBJ)
 
 $(SRC_OBJ)/%.o:%.cpp | $(SRC_OBJ)
-	@$(CPP) $(CFLAGS) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	@$(RM) $(SRC_OBJ)

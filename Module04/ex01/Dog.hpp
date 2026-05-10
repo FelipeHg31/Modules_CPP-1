@@ -6,7 +6,7 @@
 /*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/08 21:10:05 by juan-her          #+#    #+#             */
-/*   Updated: 2026/05/10 05:54:25 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/10 18:11:08 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "Animal.hpp"
 #include "Brain.hpp"
+
 
 class Dog : public Animal
 {    

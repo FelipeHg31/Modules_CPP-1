@@ -6,7 +6,7 @@
 /*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 02:01:19 by juan-her          #+#    #+#             */
-/*   Updated: 2026/05/10 06:25:13 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/10 21:00:54 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class MateriaSource : public IMateriaSource
         MateriaSource& operator=(const MateriaSource& other);
         ~MateriaSource();
         void learnMateria(AMateria* m);
-        AMateria* createMateria(std::string const & type);    
+        AMateria* createMateria(std::string const & type);
 };
 
 #endif
