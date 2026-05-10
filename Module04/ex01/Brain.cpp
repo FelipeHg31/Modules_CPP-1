@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 15:59:44 by juan-her          #+#    #+#             */
-/*   Updated: 2026/04/09 16:33:30 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/10 05:50:56 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ Brain::Brain(const std::string ideas[100])
 {
     std::cout << "Brain was created by arguments" << std::endl;
     for (int i=0; i < 100; i++)
-        this->ideas[i] = ideas[i];
+        _ideas[i] = ideas[i];
 }
 
 Brain::Brain(const Brain& other)
 {
     std::cout << "Brain was created by copy" << std::endl;
     for (int i=0; i < 100; i++)
-        this->ideas[i] = other.ideas[i];
+        _ideas[i] = other._ideas[i];
 }
 
 Brain& Brain::operator=(const Brain& other)
@@ -38,7 +38,7 @@ Brain& Brain::operator=(const Brain& other)
     if (this != &other)
     {
         for (int i=0; i < 100; i++)
-            this->ideas[i] = other.ideas[i];
+            _ideas[i] = other._ideas[i];
     }
     return (*this);
 }

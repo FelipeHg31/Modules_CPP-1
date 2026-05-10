@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 02:01:19 by juan-her          #+#    #+#             */
-/*   Updated: 2026/04/11 03:44:06 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/10 06:25:13 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class MateriaSource : public IMateriaSource
 {
     private:
-        AMateria* materias[4];
+        AMateria* _materias[4];
     public:
         MateriaSource();
         MateriaSource(const MateriaSource& other);

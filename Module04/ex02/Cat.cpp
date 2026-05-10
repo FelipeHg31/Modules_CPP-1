@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/08 21:09:42 by juan-her          #+#    #+#             */
-/*   Updated: 2026/04/09 17:06:00 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/10 06:15:16 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 Cat::Cat(): AAnimal()
 {
     std::cout << "Cat was created!!" << std::endl;
-    this->type = "Cat";
-    this->brain = new Brain();
+    _type = "Cat";
+    _brain = new Brain();
 }
 
-Cat::Cat(const std::string type): AAnimal(type)
+Cat::Cat(const std::string _type): AAnimal(_type)
 {
     std::cout << "Cat was created by args!!" << std::endl;
 }
@@ -28,7 +28,7 @@ Cat::Cat(const std::string type): AAnimal(type)
 Cat::Cat(const Cat& other): AAnimal(other)
 {
     std::cout << "Cat copy was created!!" << std::endl;
-    this->brain = new Brain(*other.brain);
+    _brain = new Brain(*other._brain);
 }
 
 Cat& Cat::operator=(const Cat& other)
@@ -37,8 +37,8 @@ Cat& Cat::operator=(const Cat& other)
     if(this != &other)
     {
         AAnimal::operator=(other);
-        delete (brain);
-        brain = new Brain(*other.brain);
+        delete (_brain);
+        _brain = new Brain(*other._brain);
     }
     return (*this);
 }
@@ -46,7 +46,7 @@ Cat& Cat::operator=(const Cat& other)
 Cat::~Cat()
 {
     std::cout << "Cat dead!" << std::endl;
-    delete (this->brain);
+    delete (_brain);
 }
 
 void Cat::makeSound() const

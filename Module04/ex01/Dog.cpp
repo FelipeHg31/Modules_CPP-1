@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/08 21:10:02 by juan-her          #+#    #+#             */
-/*   Updated: 2026/04/09 16:40:01 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/10 05:55:15 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 Dog::Dog(): Animal()
 {
     std::cout << "Dog was created!!" << std::endl;
-    this->type = "Dog";
-    this->brain = new Brain();
+    this->_type = "Dog";
+    this->_brain = new Brain();
 }
 
-Dog::Dog(const std::string type): Animal(type)
+Dog::Dog(const std::string _type): Animal(_type)
 {
     std::cout << "Dog was created by args!!" << std::endl;
 }
@@ -28,7 +28,7 @@ Dog::Dog(const std::string type): Animal(type)
 Dog::Dog(const Dog& other): Animal(other)
 {
     std::cout << "Dog copy was created!!" << std::endl;
-    brain = new Brain(*other.brain);
+    _brain = new Brain(*other._brain);
 }
 
 Dog& Dog::operator=(const Dog& other)
@@ -37,8 +37,8 @@ Dog& Dog::operator=(const Dog& other)
     if(this != &other)
     {
         Animal::operator=(other);
-        delete (brain);
-        brain = new Brain(*other.brain);
+        delete (_brain);
+        _brain = new Brain(*other._brain);
     }
     return (*this);
 }
@@ -46,7 +46,7 @@ Dog& Dog::operator=(const Dog& other)
 Dog::~Dog()
 {
     std::cout << "Dog dead!" << std::endl;
-    delete(this->brain);
+    delete(this->_brain);
 }
 
 void Dog::makeSound() const

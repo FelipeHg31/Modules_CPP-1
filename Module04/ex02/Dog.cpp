@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/08 21:10:02 by juan-her          #+#    #+#             */
-/*   Updated: 2026/04/09 17:02:51 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/10 06:18:34 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 Dog::Dog(): AAnimal()
 {
     std::cout << "Dog was created!!" << std::endl;
-    this->type = "Dog";
-    this->brain = new Brain();
+    _type = "Dog";
+    _brain = new Brain();
 }
 
-Dog::Dog(const std::string type): AAnimal(type)
+Dog::Dog(const std::string _type): AAnimal(_type)
 {
     std::cout << "Dog was created by args!!" << std::endl;
 }
@@ -28,7 +28,7 @@ Dog::Dog(const std::string type): AAnimal(type)
 Dog::Dog(const Dog& other): AAnimal(other)
 {
     std::cout << "Dog copy was created!!" << std::endl;
-    brain = new Brain(*other.brain);
+    _brain = new Brain(*other._brain);
 }
 
 Dog& Dog::operator=(const Dog& other)
@@ -37,8 +37,8 @@ Dog& Dog::operator=(const Dog& other)
     if(this != &other)
     {
         AAnimal::operator=(other);
-        delete (brain);
-        brain = new Brain(*other.brain);
+        delete (_brain);
+        _brain = new Brain(*other._brain);
     }
     return (*this);
 }
@@ -46,7 +46,7 @@ Dog& Dog::operator=(const Dog& other)
 Dog::~Dog()
 {
     std::cout << "Dog dead!" << std::endl;
-    delete(this->brain);
+    delete(_brain);
 }
 
 void Dog::makeSound() const

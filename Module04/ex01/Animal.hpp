@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/08 21:09:39 by juan-her          #+#    #+#             */
-/*   Updated: 2026/04/09 00:34:18 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/10 05:47:24 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class Animal
 {
     protected:
-        std::string type;
+        std::string _type;
     public:
         Animal();
         Animal(const std::string type);

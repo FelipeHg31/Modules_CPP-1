@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-her <juan-her@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juan-her <juan-her@@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/08 21:10:05 by juan-her          #+#    #+#             */
-/*   Updated: 2026/04/11 03:07:45 by juan-her         ###   ########.fr       */
+/*   Updated: 2026/05/10 05:54:25 by juan-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Dog : public Animal
 {    
     private:
-        Brain* brain; 
+        Brain* _brain; 
     public:
         Dog();
         Dog(const std::string type);
